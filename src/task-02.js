@@ -8,7 +8,7 @@ const ingredients = [
 ];
 
 
-const contanierListEl = document.querySelector(`#ingredients`);
+const containerListEl = document.querySelector(`#ingredients`);
 
 
 const makeItem = (option) => {
@@ -22,7 +22,7 @@ const makeItem = (option) => {
 };
 
 const elements = makeItem(ingredients);
-contanierListEl.append(...elements);
+containerListEl.append(...elements);
 
 
 
