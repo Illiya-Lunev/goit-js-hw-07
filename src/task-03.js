@@ -13,22 +13,39 @@ const images = [
   },
 ];
 
-const containerImgEl = document.querySelector(`#gallery`);
-console.log(containerImgEl);
-
-const galleryList = images.map(images => {
-    const { url, alt } = images;
-    const itemEl = document.createElement(`li`);
-    itemEl.classList.add(`galleri-item`)
-
-    return `<li><img src= ${url} alt= ${alt}/></li>`;
-
-});
-
-console.log(galleryList);
 
 
-containerImgEl.insertAdjacentHTML(`beforeend`, galleryList);
+
+const galleryRef = document.querySelector('#gallery');
+const createGallery = image => {
+  const itemRef = document.createElement('li');
+  itemRef.classList.add(`gallery__item`)
+  const imageRef = document.createElement('img');
+  itemRef.appendChild(imageRef);
+  imageRef.src = image.url;
+  imageRef.width = 440;
+  imageRef.height = 300;
+  return itemRef;
+};
+const elementListRef = images.map(image => createGallery(image));
+galleryRef.append(...elementListRef);
+
+console.log(galleryRef);
+
+// const containerImgEl = document.querySelector(`#gallery`);
+// console.log(containerImgEl);
+
+// const galleryList = images.map(images => {
+//     const { url, alt } = images;
+//     return `<li><img src= ${url} alt= ${alt}/></li>`;
+
+// });
+
+
+// console.log(galleryList);
+
+
+// containerImgEl.insertAdjacentHTML(`beforeend`, galleryList.join(' '));
 
 
 

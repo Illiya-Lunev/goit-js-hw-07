@@ -1,0 +1,9 @@
+ul {
+  list-style: none;
+  display: flex;
+}
+
+.gallery__item {
+  margin-top: 60px;
+  margin-left: 30px;
+}
