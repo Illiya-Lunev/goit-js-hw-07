@@ -15,19 +15,10 @@ const images = [
 
 
 
-
 const galleryRef = document.querySelector('#gallery');
-const createGallery = image => {
-  const itemRef = document.createElement('li');
-  itemRef.classList.add(`gallery__item`)
-  const imageRef = document.createElement('img');
-  itemRef.appendChild(imageRef);
-  imageRef.src = image.url;
-  imageRef.width = 440;
-  imageRef.height = 300;
-  return itemRef;
-};
-const elementListRef = images.map(image => createGallery(image));
-galleryRef.append(...elementListRef);
 
-console.log(galleryRef);
+images.forEach(element => {
+  galleryRef.insertAdjacentHTML(`afterbegin`, `<li class ="gallery__item"><img src = "${element.url}" alt = "${element.alt}"  width = "440" height = "300" /></li>`);
+
+});
+
